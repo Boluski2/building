@@ -11,6 +11,7 @@ import ProjectsHero from "./projectinfo/ProjectsHero";
 import RecentProjects from "./projectinfo/RecentProjects";
 
 const Projects = () => {
+  
   const featuredProjects = [
     {
       id: "golden-gate-extension",
@@ -125,7 +126,7 @@ const Projects = () => {
       
       <ProjectsHero />
       
-      <FeaturedProjects projects={featuredProjects} />
+      {/* <FeaturedProjects projects={featuredProjects} /> */}
       
       <ProjectCategories categories={projectCategories} />
       

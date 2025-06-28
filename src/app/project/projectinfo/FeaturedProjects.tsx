@@ -127,17 +127,19 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import Image from 'next/image';
 
-interface FeaturedProject {
+// In your types file or at the top of your component
+export interface FeaturedProject {
   id: string;
   title: string;
   location: string;
   duration: string;
   budget: string;
   category: string;
-  status: 'Completed' | 'In Progress' | 'Upcoming'; // Changed from 'Ongoing' to 'In Progress'
+  status: 'Completed' | 'In Progress' | 'Upcoming'; // Make sure this matches your data
   description: string;
   image: string;
   highlights: string[];
+  // Optional fields if they exist in some projects
   overview?: string;
   challenges?: string[];
   solutions?: string[];
