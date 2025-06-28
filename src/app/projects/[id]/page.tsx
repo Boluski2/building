@@ -154,7 +154,7 @@ const ProjectDetail = () => {
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Project Not Found</h1>
-          <p className="text-gray-600 mb-8">The project you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The project you&apos;re looking for doesn't exist.</p>
           <Button asChild>
             <Link href="/projects">Back to Projects</Link>
           </Button>

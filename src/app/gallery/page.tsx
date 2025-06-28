@@ -288,10 +288,148 @@
 // export default Gallery;
 
 
+// 'use client';
+
+// import { useState, useEffect } from 'react';
+// import { X, ChevronLeft, ChevronRight} from 'lucide-react';
+// import { Button } from '@/components/ui/button';
+// import { Card, CardContent } from '@/components/ui/card';
+// import Image from 'next/image';
+
+// interface GalleryProject {
+//   id: number;
+//   title: string;
+//   category: string;
+//   images: string[];
+// }
+
+// const Gallery = () => {
+//   const [selectedProject, setSelectedProject] = useState<GalleryProject | null>(null);
+//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+//   const [windowSize, setWindowSize] = useState({
+//     width: typeof window !== 'undefined' ? window.innerWidth : 0,
+//     height: typeof window !== 'undefined' ? window.innerHeight : 0
+//   });
+
+//   useEffect(() => {
+//     const handleResize = () => {
+//       setWindowSize({
+//         width: window.innerWidth,
+//         height: window.innerHeight
+//       });
+//     };
+
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, []);
+
+//   const galleryProjects: GalleryProject[] = [
+//   {
+//        id: 1,
+//        title: "Bridge Construction",
+//        category: "Bridges",
+//        images: [
+//          "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&",
+//          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJOCyq84DhcEOR2N5xfEiUUmvigTK_oyWLyw&s",
+//          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU_163ZGY7uX6k9qAPQkag7PC1S9qt2l4Y-g&s",
+//          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl9zR27NwFEsKdlCMsO_B7W-P5FZ2fAT0-w&s"
+//        ]
+//      },
+//      {
+//        id: 2,
+//        title: "Highway Infrastructure",
+//        category: "Roads",
+//        images: [
+//          "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
+//        ]
+//      },
+//      {
+//        id: 3,
+//        title: "Building Systems",
+//        category: "Building Systems",
+//        images: [
+//          "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
+//        ]
+//      },
+//      {
+//        id: 4,
+//        title: "Commercial Building",
+//        category: "Structures",
+//        images: [
+//          "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
+//        ]
+//      },
+//      {
+//        id: 5,
+//        title: "Modern Architecture",
+//        category: "Structures",
+//        images: [
+//          "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
+//        ]
+//      },
+//      {
+//        id: 6,
+//        title: "Residential Complex",
+//        category: "Structures",
+//        images: [
+//          "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
+//        ]
+//      }
+//     // Other projects...
+//   ];
+
+//   const categories = ["All", "Bridges", "Roads", "Building Systems", "Structures"];
+//   const [activeCategory, setActiveCategory] = useState("All");
+
+//   const filteredProjects = activeCategory === "All" 
+//     ? galleryProjects 
+//     : galleryProjects.filter(project => project.category === activeCategory);
+
+//   const nextImage = () => {
+//     if (selectedProject && currentImageIndex < selectedProject.images.length - 1) {
+//       setCurrentImageIndex(currentImageIndex + 1);
+//     }
+//   };
+
+//   const prevImage = () => {
+//     if (currentImageIndex > 0) {
+//       setCurrentImageIndex(currentImageIndex - 1);
+//     }
+//   };
+
+//   const openLightbox = (project: GalleryProject) => {
+//     setSelectedProject(project);
+//     setCurrentImageIndex(0);
+//     document.body.style.overflow = 'hidden';
+//   };
+
+//   const closeLightbox = () => {
+//     setSelectedProject(null);
+//     setCurrentImageIndex(0);
+//     document.body.style.overflow = 'auto';
+//   };
+
+//   useEffect(() => {
+//     const handleKeyDown = (e: KeyboardEvent) => {
+//       if (!selectedProject) return;
+      
+//       if (e.key === 'Escape') {
+//         closeLightbox();
+//       } else if (e.key === 'ArrowRight') {
+//         nextImage();
+//       } else if (e.key === 'ArrowLeft') {
+//         prevImage();
+//       }
+//     };
+
+//     window.addEventListener('keydown', handleKeyDown);
+//     return () => window.removeEventListener('keydown', handleKeyDown);
+//   }, [selectedProject, currentImageIndex]);
+
 'use client';
 
-import { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight} from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
@@ -323,60 +461,60 @@ const Gallery = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const galleryProjects: GalleryProject[] = [
-  {
-       id: 1,
-       title: "Bridge Construction",
-       category: "Bridges",
-       images: [
-         "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&",
-         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJOCyq84DhcEOR2N5xfEiUUmvigTK_oyWLyw&s",
-         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU_163ZGY7uX6k9qAPQkag7PC1S9qt2l4Y-g&s",
-         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl9zR27NwFEsKdlCMsO_B7W-P5FZ2fAT0-w&s"
-       ]
-     },
-     {
-       id: 2,
-       title: "Highway Infrastructure",
-       category: "Roads",
-       images: [
-         "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
-       ]
-     },
-     {
-       id: 3,
-       title: "Building Systems",
-       category: "Building Systems",
-       images: [
-         "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
-       ]
-     },
-     {
-       id: 4,
-       title: "Commercial Building",
-       category: "Structures",
-       images: [
-         "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
-       ]
-     },
-     {
-       id: 5,
-       title: "Modern Architecture",
-       category: "Structures",
-       images: [
-         "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
-       ]
-     },
-     {
-       id: 6,
-       title: "Residential Complex",
-       category: "Structures",
-       images: [
-         "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=400&h=400&"
-       ]
-     }
-    // Other projects...
-  ];
+ const galleryProjects: GalleryProject[] = [
+   {
+        id: 1,
+        title: "Bridge Construction",
+        category: "Bridges",
+        images: [
+          "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&auto=format&fit=crop",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJOCyq84DhcEOR2N5xfEiUUmvigTK_oyWLyw&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU_163ZGY7uX6k9qAPQkag7PC1S9qt2l4Y-g&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl9zR27NwFEsKdlCMsO_B7W-P5FZ2fAT0-w&s"
+        ]
+      },
+      {
+        id: 2,
+        title: "Highway Infrastructure",
+        category: "Roads",
+        images: [
+          "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&auto=format&fit=crop"
+        ]
+      },
+      {
+        id: 3,
+        title: "Building Systems",
+        category: "Building Systems",
+        images: [
+          "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&auto=format&fit=crop"
+        ]
+      },
+      {
+        id: 4,
+        title: "Commercial Building",
+        category: "Structures",
+        images: [
+          "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&auto=format&fit=crop"
+        ]
+      },
+      {
+        id: 5,
+        title: "Modern Architecture",
+        category: "Structures",
+        images: [
+          "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&auto=format&fit=crop"
+        ]
+      },
+      {
+        id: 6,
+        title: "Residential Complex",
+        category: "Structures",
+        images: [
+          "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&auto=format&fit=crop"
+        ]
+      }
+     // Other projects...
+   ];
 
   const categories = ["All", "Bridges", "Roads", "Building Systems", "Structures"];
   const [activeCategory, setActiveCategory] = useState("All");
@@ -385,29 +523,29 @@ const Gallery = () => {
     ? galleryProjects 
     : galleryProjects.filter(project => project.category === activeCategory);
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     if (selectedProject && currentImageIndex < selectedProject.images.length - 1) {
       setCurrentImageIndex(currentImageIndex + 1);
     }
-  };
+  }, [selectedProject, currentImageIndex]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     if (currentImageIndex > 0) {
       setCurrentImageIndex(currentImageIndex - 1);
     }
-  };
+  }, [currentImageIndex]);
 
-  const openLightbox = (project: GalleryProject) => {
+  const openLightbox = useCallback((project: GalleryProject) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
     document.body.style.overflow = 'hidden';
-  };
+  }, []);
 
-  const closeLightbox = () => {
+  const closeLightbox = useCallback(() => {
     setSelectedProject(null);
     setCurrentImageIndex(0);
     document.body.style.overflow = 'auto';
-  };
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -424,7 +562,9 @@ const Gallery = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedProject, currentImageIndex]);
+  }, [selectedProject, currentImageIndex, nextImage, prevImage, closeLightbox]);
+
+
 
   return (
     <div className="min-h-screen bg-gray-50">

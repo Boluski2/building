@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Building, Calendar, MapPin, Users } from 'lucide-react';
-import React, { useEffect,  useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const Companystatistics = () => {
@@ -20,14 +20,7 @@ const Companystatistics = () => {
     { target: 50, label: "Global Locations", icon: MapPin }
   ];
 
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      setHasAnimated(true);
-      animateCounters();
-    }
-  }, [inView, hasAnimated]);
-
-  const animateCounters = () => {
+  const animateCounters = useCallback(() => {
     const duration = 8000; // Animation duration in ms
     const startTime = Date.now();
 
@@ -52,13 +45,21 @@ const Companystatistics = () => {
     };
 
     requestAnimationFrame(animate);
-  };
+  }, [stats]); // Add stats as dependency since we use it inside
+
+  useEffect(() => {
+    if (inView && !hasAnimated) {
+      setHasAnimated(true);
+      animateCounters();
+    }
+  }, [inView, hasAnimated, animateCounters]); // Now includes all dependencies
 
   return (
     <section 
       ref={ref}
       className="py-12 lg:py-20 bg-gray-100 overflow-hidden"
     >
+      {/* Rest of your JSX remains exactly the same */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 lg:mb-16 animate-fade-in">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 lg:mb-4">
