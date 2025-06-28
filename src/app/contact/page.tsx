@@ -330,7 +330,7 @@ const Contact = () => {
                 <CardContent className="p-4 sm:p-6">
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Our Headquarters</h3>
                   <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                    Located in the heart of Tech City's engineering district, our state-of-the-art facility 
+                    Located in the heart of Tech City&apos;s engineering district, our state-of-the-art facility 
                     houses our team of expert engineers and cutting-edge design technology.
                   </p>
                   <div className="space-y-2">

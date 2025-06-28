@@ -3,8 +3,6 @@ import {  Mail,  Linkedin,  } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 // import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { useState } from 'react';
 import TeamMemberModal from '@/components/TeamMemberModal';
 import Image from 'next/image';
@@ -224,7 +222,7 @@ const Team = () => {
         </div>
       </section>
 
-      <Footer />
+
       
       <TeamMemberModal 
         member={selectedMember}
