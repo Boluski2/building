@@ -185,7 +185,7 @@ const Contact = () => {
               <CardHeader className="p-4 sm:p-6">
                 <CardTitle className="text-xl sm:text-2xl text-center">Project Consultation Request</CardTitle>
                 <p className="text-gray-600 text-center text-sm sm:text-base">
-                  Fill out the form below and we'll get back to you within 24 hours
+                  Fill out the form below and we&apos;ll get back to you within 24 hours
                 </p>
               </CardHeader>
               <CardContent className="p-4 sm:p-6">

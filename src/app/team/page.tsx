@@ -10,7 +10,7 @@ import TeamMemberModal from '@/components/TeamMemberModal';
 import Image from 'next/image';
 
 const Team = () => {
-  interface TeamMember {
+  // interface TeamMember {
   // name: string;
   // role: string;
   // experience: string;
@@ -22,19 +22,19 @@ const Team = () => {
   // email?: string;
   // phone?: string;
   // linkedin?: string;
-   id: number;
-  name: string;
-  role: string;
-  image: string;
-  experience: string;
-  specialization: string;
-  education: string[];
-  bio: string;
-  achievements: string[];
-  email: string;
-  phone?: string;
-  linkedin: string;
-}
+//    id: number;
+//   name: string;
+//   role: string;
+//   image: string;
+//   experience: string;
+//   specialization: string;
+//   education: string[];
+//   bio: string;
+//   achievements: string[];
+//   email: string;
+//   phone?: string;
+//   linkedin: string;
+// }
 
   const [selectedMember, setSelectedMember] = useState(null);
   const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);

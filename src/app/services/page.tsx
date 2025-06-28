@@ -1,4 +1,4 @@
-import { Building, Car, Droplets, Mountain, Shield, Zap, TreePine, Calculator, ChevronRight } from 'lucide-react';
+import { Building, Car, Droplets, Mountain, Shield, Zap, TreePine, Calculator,} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -152,7 +152,7 @@ const Services = () => {
               Expert Engineering Solutions
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
-              Building <span className="text-blue-400">Tomorrow's</span> Infrastructure Today
+              Building <span className="text-blue-400">Tomorrow </span> Infrastructure Today
             </h1>
             <p className="text-lg lg:text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Innovative civil engineering solutions that combine cutting-edge technology 
