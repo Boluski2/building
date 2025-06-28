@@ -10,6 +10,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -248,9 +249,11 @@ const ProjectDetail = () => {
             </div>
             
             <div className="animate-slide-in-right">
-              <img 
+              <Image
                 src={project.image} 
                 alt={project.title}
+                 width={800}
+                      height={800}
                 className="rounded-lg shadow-xl w-full hover:scale-105 transition-transform duration-500"
               />
             </div>

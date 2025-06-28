@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 // import Footer from '@/components/Footer';
 import { useState } from 'react';
 import TeamMemberModal from '@/components/TeamMemberModal';
+import Image from 'next/image';
 
 const Team = () => {
   interface TeamMember {
@@ -226,7 +227,7 @@ const handleMemberClick = (member: typeof allTeamMembers[number]) => {
                     onClick={() => handleMemberClick(member)}>
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden">
-                    <img
+                    <Image
                       src={member.image}
                       alt={member.name}
                       className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"

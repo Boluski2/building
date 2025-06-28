@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const slides = [
   {
@@ -64,15 +65,19 @@ const Hero = () => {
       {/* Background Image with Overlay - Responsive */}
       <div className="absolute inset-0 z-0 w-full h-full ">
         {/* Desktop Background */}
-        <img 
+        <Image
           src={currentData.bgImage}
           alt="Modern architecture"
+           width={100}
+          height={100}
           className={`hidden md:block w-full h-full object-cover object-center transition-opacity  duration-500 ${fade ? 'opacity-20' : 'opacity-40'}`}
         />
         {/* Mobile Background */}
-        <img 
+        <Image
           src={currentData.mobileBgImage}
           alt="Modern architecture"
+           width={100}
+                      height={100}
           className={`md:hidden w-full h-full object-cover object-center transition-opacity duration-500 ${fade ? 'opacity-20' : 'opacity-40'}`}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
@@ -124,9 +129,11 @@ const Hero = () => {
               <div className="relative w-full h-[28rem] lg:h-[32rem]">
                 <div className={`absolute -right-8 -top-8 w-full h-full bg-gray-800/30 backdrop-blur-sm rounded-2xl border border-white/10 shadow-2xl transition-opacity duration-500 ${fade ? 'opacity-50' : 'opacity-100'}`}></div>
                 <div className="absolute right-0 top-0 w-full h-full">
-                  <img 
+                  <Image
                     src={currentData.cardImage}
                     alt="Modern architecture"
+                     width={800}
+                      height={100}
                     className={`w-full h-full object-cover rounded-2xl transition-opacity duration-500 ${fade ? 'opacity-50' : 'opacity-100'}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent rounded-2xl"></div>

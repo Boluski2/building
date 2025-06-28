@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Services = () => {
   const services = [
@@ -360,10 +361,12 @@ const Services = () => {
             
             <div className="lg:w-1/2 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] w-full">
-                <img 
+                <Image
                   src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=1000&fit=crop" 
                   alt="Engineering capabilities"
                   className="w-full h-full object-cover"
+                   width={800}
+                      height={600}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">

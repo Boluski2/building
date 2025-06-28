@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Quote } from 'lucide-react';
+import Image from 'next/image';
 
 const Testimonials = () => {
   const testimonials = [
@@ -83,9 +84,11 @@ const Testimonials = () => {
                 {/* Client Info */}
                 <div className="flex flex-col items-center">
                   <div className="relative mb-4">
-                    <img
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
+                       width={800}
+                      height={600}
                       className="w-16 h-16 rounded-full object-cover ring-4 ring-blue-100 group-hover:ring-blue-200 transition-all duration-300"
                     />
                     <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>

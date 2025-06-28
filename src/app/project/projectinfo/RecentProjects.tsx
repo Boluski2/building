@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
 
 interface RecentProject {
   title: string;
@@ -33,9 +34,11 @@ const RecentProjects = ({ projects }: RecentProjectsProps) => {
             <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                     width={800}
+                      height={600}
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
