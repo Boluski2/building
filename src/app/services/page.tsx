@@ -314,7 +314,7 @@ const Services = () => {
             <div className="lg:w-1/2">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Advanced Engineering Capabilities</h2>
               <p className="text-lg text-gray-600 mb-8">
-                We combine cutting-edge technology with deep industry expertise to deliver innovative solutions for complex engineering challenges.
+                We combine cutting edge technology with deep industry expertise to deliver innovative solutions for complex engineering challenges.
               </p>
               
               <div className="space-y-6">
