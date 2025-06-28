@@ -10,33 +10,23 @@ import TeamMemberModal from '@/components/TeamMemberModal';
 import Image from 'next/image';
 
 const Team = () => {
-  // interface TeamMember {
-  // name: string;
-  // role: string;
-  // experience: string;
-  // specialization: string;
-  // image: string;
-  // bio?: string;
-  // education?: string[];
-  // achievements?: string[];
-  // email?: string;
-  // phone?: string;
-  // linkedin?: string;
-//    id: number;
-//   name: string;
-//   role: string;
-//   image: string;
-//   experience: string;
-//   specialization: string;
-//   education: string[];
-//   bio: string;
-//   achievements: string[];
-//   email: string;
-//   phone?: string;
-//   linkedin: string;
-// }
+  interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  image: string;
+  experience: string;
+  specialization: string;
+  education: string[];
+  bio: string;
+  achievements: string[];
+  email: string;
+  linkedin: string;
+}
 
-  const [selectedMember, setSelectedMember] = useState(null);
+
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+
   const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);
 
   const allTeamMembers = [
