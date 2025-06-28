@@ -134,7 +134,7 @@ interface FeaturedProject {
   duration: string;
   budget: string;
   category: string;
-  status: 'Completed' | 'Ongoing' | 'Upcoming';
+  status: 'Completed' | 'In Progress' | 'Upcoming'; // Changed from 'Ongoing' to 'In Progress'
   description: string;
   image: string;
   highlights: string[];
@@ -191,7 +191,7 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
                     <div className="flex items-center gap-3 mb-4">
                       <Badge variant={
                         project.status === 'Completed' ? 'default' : 
-                        project.status === 'Ongoing' ? 'secondary' : 'outline'
+                        project.status === 'In Progress' ? 'secondary' : 'outline'
                       }>
                         {project.status}
                       </Badge>
