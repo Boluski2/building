@@ -151,7 +151,7 @@ const Companystatistics = () => {
       setHasAnimated(true);
       animateCounters();
     }
-  }, [inView, hasAnimated, ]);
+  }, [inView, hasAnimated, animateCounters]);
 
   const animateCounters = useCallback(() => {
     const duration = 8000; // Animation duration in ms
