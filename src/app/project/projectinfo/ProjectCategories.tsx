@@ -24,7 +24,7 @@ const ProjectCategories = ({ categories }: ProjectCategoriesProps) => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {categories.map((category, index) => (
+          {categories.map((category, ) => (
             <div
               key={category.name}
               className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group"

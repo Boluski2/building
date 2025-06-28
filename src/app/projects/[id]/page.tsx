@@ -6,8 +6,6 @@ import { Calendar, MapPin, Users, Award, ArrowLeft, CheckCircle } from 'lucide-r
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';

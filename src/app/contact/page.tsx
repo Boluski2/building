@@ -27,8 +27,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 // import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -338,7 +336,7 @@ const Contact = () => {
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
                       <MapPin className="h-4 w-4 text-blue-600 flex-shrink-0" />
-                      <span className="text-gray-700 text-sm sm:text-base">123 Engineering Plaza, Tech City, TC 12345</span>
+                      <span className="text-gray-700 text-sm sm:text-base">Lagoes, Nigeria</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="h-4 w-4 text-blue-600 flex-shrink-0" />
@@ -402,14 +400,14 @@ const Contact = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div className="flex items-center space-x-2">
               <Phone className="h-5 sm:h-6 w-5 sm:w-6" />
-              <span className="text-lg sm:text-xl font-bold">Emergency: +1 (555) 911-TECH</span>
+              <span className="text-lg sm:text-xl font-bold">+2340 1234 5678</span>
             </div>
             <div className="text-red-200 text-sm sm:text-base">Available 24/7 for critical situations</div>
           </div>
         </div>
       </section>
 
-      {/* <Footer /> */}
+     
     </div>
   );
 };

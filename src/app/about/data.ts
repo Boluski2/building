@@ -1,4 +1,4 @@
-  import { Users, Award, Target, Globe, CheckCircle, ArrowRight, Building2, Calendar, MapPin, Badge } from 'lucide-react';
+  import { Users,  Target, Globe, CheckCircle, } from 'lucide-react';
 // import { Card, CardContent } from '@/components/ui/card';
   
   export const values = [

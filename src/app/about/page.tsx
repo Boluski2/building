@@ -468,7 +468,7 @@ import { AboutRecognition } from "./AboutRecognition";
 // import TeamMemberModal from '@/components/TeamMemberModal';
 // import { useState } from 'react';
 // import { values, team } from '.components/about/data';
-import { values, team } from "./data";
+import { values,  } from "./data";
 import Companystatistics from "./Companystatistics";
 // import AboutTeam from "./AboutTeam";
 import LeadershipTeam from "./AboutTeam";

@@ -6,7 +6,7 @@ import FAQ from '@/components/FAQ'
 import FeaturedProject from '@/components/Featureproject'
 import Hero from '@/components/Hero'
 import Testimonials from '@/components/Testimonials'
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
 const page = () => {
 

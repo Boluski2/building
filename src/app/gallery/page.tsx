@@ -291,7 +291,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Camera, Grid3X3, Eye } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';

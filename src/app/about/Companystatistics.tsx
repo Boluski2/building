@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Building, Calendar, MapPin, Users } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect,  useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const Companystatistics = () => {
