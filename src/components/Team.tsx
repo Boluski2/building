@@ -7,8 +7,36 @@ import { useState } from 'react';
 import TeamMemberModal from '@/components/TeamMemberModal';
 import Image from 'next/image';
 
+
+interface TeamMember {
+  // name: string;
+  // role: string;
+  // experience: string;
+  // specialization: string;
+  // image: string;
+  // bio?: string;
+  // education?: string[];
+  // achievements?: string[];
+  // email?: string;
+  // phone?: string;
+  // linkedin?: string;
+   id: number;
+  name: string;
+  role: string;
+  image: string;
+  experience: string;
+  specialization: string;
+  education: string[];
+  bio: string;
+  achievements: string[];
+  email: string;
+  phone?: string;
+  linkedin: string;
+}
+
 const Team = () => {
-  const [selectedMember, setSelectedMember] = useState(null);
+ const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+
   const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);
 
   const allTeamMembers = [
@@ -158,10 +186,13 @@ const Team = () => {
     }
   ];
 
-  const handleMemberClick = (member) => {
-    setSelectedMember(member);
-    setIsTeamModalOpen(true);
-  };
+const handleMemberClick = (member: TeamMember) => {
+  setSelectedMember(member);
+  setIsTeamModalOpen(true);
+};
+
+
+  
 
   const handleCloseTeamModal = () => {
     setIsTeamModalOpen(false);
