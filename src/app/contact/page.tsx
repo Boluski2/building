@@ -314,7 +314,7 @@ const Contact = () => {
                   </Button>
 
                   <p className="text-xs sm:text-sm text-gray-600 text-center">
-                    * Required fields. We respect your privacy and will never share your information.
+                   &#39; Required fields. We respect your privacy and will never share your information.
                   </p>
                 </form>
               </CardContent>
