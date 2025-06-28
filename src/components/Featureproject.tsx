@@ -14,6 +14,7 @@ import { MapPin,  } from 'lucide-react';
 // } from '@/components/ui/dialog';
 import ProjectModal from './ProjectModal';
 
+// Update this interface at the top of FeaturedProjects.tsx
 interface Project {
   id: string;
   title: string;
@@ -21,10 +22,22 @@ interface Project {
   duration: string;
   budget: string;
   category: string;
-  status: string;
+  status: 'Completed' | 'In Progress' | 'Planned' | 'Cancelled'; // Make this match your modal's status values
   description: string;
   image: string;
   highlights: string[];
+  // Optional fields that match your modal's interface
+  technicalSpecs?: {
+    scale?: string;
+    technology?: string;
+    sustainability?: string;
+  };
+  timeline?: Array<{
+    phase: string;
+    duration: string;
+    description: string;
+    color: string;
+  }>;
 }
 
 const FeaturedProjects = () => {
@@ -115,10 +128,11 @@ const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
     }, []);
   
 
-   const handleProjectLearnMore = (project) => {
-    setSelectedProject(project);
-    setIsProjectModalOpen(true);
-  };
+ const handleProjectLearnMore = (project: Project) => {
+  setSelectedProject(project);
+  setIsProjectModalOpen(true);
+};
+
 
    const handleCloseProjectModal = () => {
     setIsProjectModalOpen(false);
