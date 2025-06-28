@@ -1,21 +1,37 @@
-// import Header from '@/components/Header';
-// import Footer from '@/components/Footer';
-// import ProjectsHero from '@/components/projects/ProjectsHero';
-// import FeaturedProjects from '@/components/projects/FeaturedProjects';
-// import ProjectCategories from '@/components/projects/ProjectCategories';
-// import RecentProjects from '@/components/projects/RecentProjects';
-
 import FeaturedProjects from "./projectinfo/FeaturedProjects";
 import ProjectCategories from "./projectinfo/ProjectCategories";
 import ProjectsHero from "./projectinfo/ProjectsHero";
 import RecentProjects from "./projectinfo/RecentProjects";
 
+interface FeaturedProject {
+  id: string;
+  title: string;
+  location: string;
+  duration: string;
+  budget: string;
+  category: string;
+  status: 'Completed' | 'In Progress' | 'Upcoming';
+  description: string;
+  image: string;
+  highlights: string[];
+}
+
+interface ProjectCategory {
+  name: string;
+  count: number;
+  color: string;
+}
+
+interface RecentProject {
+  title: string;
+  location: string;
+  year: string;
+  category: string;
+  image: string;
+}
+
 const Projects = () => {
-  
-  
-
-
-  const featuredProjects = [
+  const featuredProjects: FeaturedProject[] = [
     {
       id: "golden-gate-extension",
       title: "Golden Gate Extension Bridge",
@@ -69,7 +85,7 @@ const Projects = () => {
     }
   ];
 
-  const projectCategories = [
+  const projectCategories: ProjectCategory[] = [
     { name: "Transportation", count: 45, color: "bg-blue-500" },
     { name: "Structural", count: 38, color: "bg-green-500" },
     { name: "Water Resources", count: 32, color: "bg-cyan-500" },
@@ -78,7 +94,7 @@ const Projects = () => {
     { name: "Utilities", count: 18, color: "bg-red-500" }
   ];
 
-  const recentProjects = [
+  const recentProjects: RecentProject[] = [
     {
       title: "Downtown Transit Hub",
       location: "Seattle, WA",
@@ -125,16 +141,10 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      
       <ProjectsHero />
-      
       <FeaturedProjects projects={featuredProjects} />
-      
       <ProjectCategories categories={projectCategories} />
-      
       <RecentProjects projects={recentProjects} />
-      
-    
     </div>
   );
 };
