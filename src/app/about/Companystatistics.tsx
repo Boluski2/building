@@ -127,12 +127,12 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Building, Calendar, MapPin, Users } from 'lucide-react';
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, {  useState, useCallback, useMemo } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const Companystatistics = () => {
   const [counters, setCounters] = useState([0, 0, 0, 0]);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  // const [hasAnimated, setHasAnimated] = useState(false);
   const { ref, inView } = useInView({
     threshold: 0.7,
     triggerOnce: true
@@ -146,12 +146,12 @@ const Companystatistics = () => {
     { target: 50, label: "Global Locations", icon: MapPin }
   ], []);
 
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      setHasAnimated(true);
-      animateCounters();
-    }
-  }, [inView, hasAnimated, animateCounters]);
+  // useEffect(() => {
+  //   if (inView && !hasAnimated) {
+  //     setHasAnimated(true);
+  //     animateCounters();
+  //   }
+  // }, [inView, hasAnimated, animateCounters]);
 
   const animateCounters = useCallback(() => {
     const duration = 8000; // Animation duration in ms
@@ -224,7 +224,7 @@ const Companystatistics = () => {
                   />
                 </div>
                 
-                <div className="text-xl lg:text-4xl font-bold text-gray-900 mb-1 lg:mb-2">
+                {/* <div className="text-xl lg:text-4xl font-bold text-gray-900 mb-1 lg:mb-2">
                   {hasAnimated ? (
                     <span className="inline-block min-w-[2ch]">
                       {counters[index]}+
@@ -232,7 +232,7 @@ const Companystatistics = () => {
                   ) : (
                     <span className="inline-block min-w-[2ch]">0+</span>
                   )}
-                </div>
+                </div> */}
                 
                 <p className="text-gray-600 font-medium text-sm lg:text-base">
                   {stat.label}
