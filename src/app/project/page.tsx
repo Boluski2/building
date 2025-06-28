@@ -125,7 +125,6 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* <Header /> */}
       
       <ProjectsHero />
       
@@ -135,7 +134,7 @@ const Projects = () => {
       
       <RecentProjects projects={recentProjects} />
       
-      {/* <Footer /> */}
+    
     </div>
   );
 };
