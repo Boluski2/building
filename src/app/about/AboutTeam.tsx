@@ -410,7 +410,7 @@ const LeadershipTeam = () => {
   const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);
 
   const teamMembers: TeamMember[] = [
-     {
+  {
       id: 1,
       name: "Dr. Sarah Johnson",
       role: "Chief Executive Officer",
@@ -529,7 +529,7 @@ const LeadershipTeam = () => {
           </div>
           
           <div className="text-center">
-            <Link href="/team" legacyBehavior>
+            <Link href="/team">
               <Button 
                 size="lg" 
                 variant="outline"

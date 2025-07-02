@@ -459,7 +459,6 @@ import { AboutRecognition } from "./AboutRecognition";
 
 import { values,  } from "./data";
 import Companystatistics from "./Companystatistics";
-// import AboutTeam from "./AboutTeam";
 import LeadershipTeam from "./AboutTeam";
 
 const About = () => {
