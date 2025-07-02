@@ -455,37 +455,15 @@ import { AboutHero } from "./AboutHero";
 import { AboutJourney } from "./AboutJourney";
 import { AboutMission } from "./AboutMission";
 import { AboutValues } from "./AboutValues";
-// import { AboutTeam } from "./AboutTeam";
 import { AboutRecognition } from "./AboutRecognition";
-// import TeamMemberModal from "@/components/TeamMemberModal";
 
-// import { AboutHero } from '../components/about/AboutHero';
-// import { AboutJourney } from '@/components/about/AboutJourney';
-// import { AboutMission } from '@/components/about/AboutMission';
-// import { AboutValues } from '@/components/about/AboutValues';
-// import { AboutTeam } from '@/components/about/AboutTeam';
-// import { AboutRecognition } from '@/components/about/AboutRecognition';
-// import TeamMemberModal from '@/components/TeamMemberModal';
-// import { useState } from 'react';
-// import { values, team } from '.components/about/data';
 import { values,  } from "./data";
 import Companystatistics from "./Companystatistics";
 // import AboutTeam from "./AboutTeam";
 import LeadershipTeam from "./AboutTeam";
 
 const About = () => {
-  // const [selectedMember, setSelectedMember] = useState(null);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // const handleMemberClick = (member) => {
-  //   setSelectedMember(member);
-  //   setIsModalOpen(true);
-  // };
-
-  // const handleCloseModal = () => {
-  //   setIsModalOpen(false);
-  //   setSelectedMember(null);
-  // };
+ 
 
   return (
     <div>
@@ -498,11 +476,6 @@ const About = () => {
       <LeadershipTeam/>
       <AboutRecognition />
       
-      {/* <TeamMemberModal 
-        member={selectedMember}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      /> */}
     </div>
   );
 };
