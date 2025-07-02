@@ -116,7 +116,7 @@ const ImageLightbox = ({ project, isOpen, onClose }: ImageLightboxProps) => {
         <Button
           variant="outline"
           size="icon"
-          className="absolute top-2 sm:top-4 right-2 sm:right-4 z-10 bg-white hover:bg-gray-100"
+          className="absolute top-2 sm:top-4 right-2 sm:right-4 z-10 bg-white hover:bg-gray-100 cursor-pointer"
           onClick={onClose}
         >
           <X className="h-4 w-4" />
@@ -127,7 +127,7 @@ const ImageLightbox = ({ project, isOpen, onClose }: ImageLightboxProps) => {
           <Button
             variant="outline"
             size="icon"
-            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 cursor-pointer"
             onClick={prevImage}
           >
             <ChevronLeft className="h-4 w-4" />
@@ -138,7 +138,7 @@ const ImageLightbox = ({ project, isOpen, onClose }: ImageLightboxProps) => {
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 cursor-pointer"
             onClick={nextImage}
           >
             <ChevronRight className="h-4 w-4" />
